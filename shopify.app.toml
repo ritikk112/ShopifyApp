@@ -3,7 +3,7 @@
 client_id = "f705cbe7bc8e7dd1c81a3f7dcdb59bbc"
 name = "fetcher"
 handle = "fetcher"
-application_url = "https://painted-propecia-commands-bus.trycloudflare.com"
+application_url = "https://family-became-jane-third.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://painted-propecia-commands-bus.trycloudflare.com/auth/callback",
-  "https://painted-propecia-commands-bus.trycloudflare.com/auth/shopify/callback",
-  "https://painted-propecia-commands-bus.trycloudflare.com/api/auth/callback"
+  "https://family-became-jane-third.trycloudflare.com/auth/callback",
+  "https://family-became-jane-third.trycloudflare.com/auth/shopify/callback",
+  "https://family-became-jane-third.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
