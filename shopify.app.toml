@@ -3,7 +3,7 @@
 client_id = "f705cbe7bc8e7dd1c81a3f7dcdb59bbc"
 name = "fetcher"
 handle = "fetcher"
-application_url = "https://family-became-jane-third.trycloudflare.com"
+application_url = "https://commodity-zimbabwe-resulting-dot.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://family-became-jane-third.trycloudflare.com/auth/callback",
-  "https://family-became-jane-third.trycloudflare.com/auth/shopify/callback",
-  "https://family-became-jane-third.trycloudflare.com/api/auth/callback"
+  "https://commodity-zimbabwe-resulting-dot.trycloudflare.com/auth/callback",
+  "https://commodity-zimbabwe-resulting-dot.trycloudflare.com/auth/shopify/callback",
+  "https://commodity-zimbabwe-resulting-dot.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

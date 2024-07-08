@@ -10,6 +10,8 @@ import {
   InlineStack,
   Select,
   Button,
+  Box,
+  Grid,
 } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 import { useState } from "react";
@@ -159,7 +161,7 @@ export default function Index() {
                   <Select
                     label="Number of products"
                     options={[
-                      {label: 'All', value: '0'},
+                      {label: 'All', value: '250'},
                       {label: '5', value: '5'},
                       {label: '10', value: '10'},
                       {label: '15', value: '15'},
@@ -182,27 +184,31 @@ export default function Index() {
                 </InlineStack>
               </Form>
               {products && products.length > 0 ? (
-                products.map(product => (
-                  <InlineStack key={product.id} gap="200" align="center">
-                    {product.images.edges.length > 0 && (
-                      <Image
-                        source={product.images.edges[0].node.originalSrc}
-                        alt={product.images.edges[0].node.altText || product.title}
-                        width={100}
-                        height={100}
-                      />
-                    )}
-                    <BlockStack>
-                      <Text variant="bodyMd">{product.title}</Text>
-                      <Text variant="bodySm">
-                        Price: {product.priceRange.minVariantPrice.amount/100} {product.priceRange.minVariantPrice.currencyCode}
-                      </Text>
-                      <Text variant="bodySm">
-                        Rating: {product.rating !== null ? product.rating : 'No rating'}/5
-                      </Text>
-                    </BlockStack>
-                  </InlineStack>
-                ))
+                <Grid>
+                  {products.map(product => (
+                    <Grid.Cell key={product.id} columnSpan={{xs: 6, sm: 3, md: 3, lg: 3, xl: 3}}>
+                      <Box background="bg-surface-magic" shadow="300" padding="400" borderRadius="100">
+                        {product.images.edges.length > 0 && (
+                          <Image
+                            source={product.images.edges[0].node.originalSrc}
+                            alt={product.images.edges[0].node.altText || product.title}
+                            width={100}
+                            height={100}
+                          />
+                        )}
+                        <BlockStack>
+                          <Text variant="bodyMd">{product.title}</Text>
+                          <Text variant="bodySm">
+                            Price: {product.priceRange.minVariantPrice.amount/100} {product.priceRange.minVariantPrice.currencyCode}
+                          </Text>
+                          <Text variant="bodySm">
+                            Rating: {product.rating !== null ? product.rating : 'No rating'}/5
+                          </Text>
+                        </BlockStack>
+                      </Box>
+                    </Grid.Cell>
+                  ))}
+                </Grid>
               ) : (
                 <Text>No products found. Please apply filters to see products.</Text>
               )}
