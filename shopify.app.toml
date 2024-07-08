@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "f705cbe7bc8e7dd1c81a3f7dcdb59bbc"
+name = "fetcher"
+handle = "fetcher"
+application_url = "https://painted-propecia-commands-bus.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "test-outl.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://painted-propecia-commands-bus.trycloudflare.com/auth/callback",
+  "https://painted-propecia-commands-bus.trycloudflare.com/auth/shopify/callback",
+  "https://painted-propecia-commands-bus.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
